@@ -4,14 +4,14 @@
 
 <link href="css/gamestyle.css" rel="stylesheet">
 
-<script src="excanvas.js" type="text/javascript"></script>
+<script src="scripts/excanvas.js" type="text/javascript"></script>
 
 </head>
 <body>
 
 	<div class="start-screen" id="start-screen">
 	
-		<img src="gamelogo.png" class="gamelogo">
+		<img src="sprites/gamelogo.png" class="gamelogo">
 		<button class="start-button" onclick="gameLoop()">START GAME</button>
 		<button class="start-button" onclick="endLoop()" >EXIT GAME</button>
 	</div>
@@ -569,7 +569,7 @@ function initScreen() {
 	// });
 
 	var image=document.createElement('img');
-      image.src="player.png";
+      image.src="sprites/player.png";
 	  image.style.position="absolute";
 	  image.style.top="88%";
 	  image.style.left="50%";
@@ -585,7 +585,7 @@ function initScreen() {
 		strip.style.left = strip.style.top = "0px";
 
 		if (useSingleTexture) {
-			strip.src = (window.opera ? "walls_19color.png" : "walls.png");
+			strip.src = (window.opera ? "sprites/walls_19color.png" : "sprites/walls.png");
 		}
 
 		strip.oldStyles = {
