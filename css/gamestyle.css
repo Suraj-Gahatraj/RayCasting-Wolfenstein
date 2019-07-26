@@ -113,6 +113,12 @@ div#ceiling {
 }
 
 
+.gameBoard
+{
+    width:10%;
+    background: red;
+    height:100px;
+}
 
 
 

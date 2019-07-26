@@ -196,8 +196,17 @@ function initEnemies() {
 			//	console.log("e.Client X "+ e.clientX);
 				//console.log("e.Client Y "+ e.clientY);
 				if((e.clientX >=enemy.img.offsetLeft && e.clientX <= enemy.img.clientWidth + enemy.img.offsetLeft) && 
-			(e.clientY >= enemy.img.offsetTop && e.clientY <= enemy.img.clientHeight + enemy.img.offsetTop))
-				enemy.alive = 0;
+            (e.clientY >= enemy.img.offsetTop && e.clientY <= enemy.img.clientHeight + enemy.img.offsetTop)&&enemy.alive)
+            {
+                enemy.alive = 0;
+                player.score++;
+                console.log("score is " + player.score);
+                document.getElementById("score-board").innerHTML = "Score is : "+ player.score;
+               
+            }
+
+           
+			
 				console.log("e.Client X :"+ (e.clientX));
 				console.log("enemy.x "+ enemy.img.x);
 			//console.log("e.Client X -enemy.x "+ (e.clientX-enemy.x));
@@ -297,7 +306,7 @@ function ai(timeDelta) {
 			
 			enemy.state = Math.floor((new Date() % walkCycleTime) / (walkCycleTime / numWalkSprites)) + 1;
 			//console.log(enemy.state);
-		console.log("enemy alive saatus"+ enemy.alive);
+		
 
 		} else {
 			if(enemy.alive==1)
@@ -348,7 +357,12 @@ function renderCycle() {
 	fps = 1000 / timeDelta;
 	if (showOverlay) {
 		updateOverlay();
-	}
+    }
+    
+    if(player.score==0)
+    {
+        document.getElementById("Message").innerHTML = "Find an Exit";
+    }
 }
 function clearSprites() {
 	// clear the visible sprites array but keep a copy in oldVisibleSprites for later.
