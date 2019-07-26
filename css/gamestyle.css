@@ -79,7 +79,9 @@ div#ceiling {
 .map-styler{
 	width:50%;
 	height:500px;
-	float:right;
+    float:right;
+    margin-right:200px;
+    margin-top:65px;
 }
 
 .screen-styler
@@ -110,11 +112,7 @@ div#ceiling {
     margin-top:40px;
 }
 
-.gamelogo
-{
-	
 
-}
 
 
 
